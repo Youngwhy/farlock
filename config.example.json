@@ -1,0 +1,26 @@
+{
+  "targetName": "YOUR_IPHONE_NAME",
+  "targetMacAddr": null,
+  "targetUuid": null,
+
+  "activeMode": true,
+  "activeReadInterval": 2.0,
+  "activeStallTimeout": 10.0,
+
+  "pollIntervalSeconds": 5.0,
+  "ewmaAlpha": 0.35,
+
+  "awayRssi": -60,
+  "rearmRssi": -55,
+
+  "awayDwellSeconds": 10,
+  "signalLostTimeoutSeconds": 20,
+  "warnBeforeLockSeconds": 5,
+  "warnCancelCooldownSeconds": 60,
+  "lockAttemptCooldownSeconds": 20,
+  "unlockCooldownSeconds": 90,
+
+  "trustedWifiSSIDs": [],
+
+  "logFile": "~/Library/Logs/farlock.log"
+}

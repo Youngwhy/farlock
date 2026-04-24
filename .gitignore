@@ -1,0 +1,13 @@
+# Swift build artifacts
+scanner/.build/
+scanner/Package.resolved
+
+# macOS
+.DS_Store
+
+# Editor / swap files
+*.swp
+*~
+
+# Local logs (users generate these at runtime)
+*.log

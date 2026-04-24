@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LaunchAgent for the unified Farlock agent (no Hammerspoon).
+
+  Install location:
+    ~/Library/LaunchAgents/com.farlock.plist
+
+  Installer substitutes __AGENT_BIN_PATH__ and __HOME__ at install time.
+
+  Load / unload:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.farlock.plist
+    launchctl bootout  gui/$(id -u) ~/Library/LaunchAgents/com.farlock.plist
+
+  Note: this plist uses the gui/$UID domain (user session) which is required
+  so the agent can create NSWindows and observe Wi-Fi / sleep events.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.farlock</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>__AGENT_BIN_PATH__</string>
+    <string>--config</string>
+    <string>__HOME__/Library/Application Support/farlock/config.json</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/farlock.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/farlock.err.log</string>
+
+  <key>ProcessType</key>
+  <string>Interactive</string>
+
+  <key>LimitLoadToSessionType</key>
+  <string>Aqua</string>
+</dict>
+</plist>
